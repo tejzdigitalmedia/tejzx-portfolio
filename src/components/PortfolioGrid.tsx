@@ -3,6 +3,7 @@
 import { motion, Variants } from "framer-motion";
 import styles from "./PortfolioGrid.module.css";
 import React from "react";
+import { useCountdown } from "@/hooks/useCountdown";
 
 const films = [
     { id: 1, title: "The Raja Saad", role: "Digital Strategy", span: "span2" },
@@ -16,7 +17,7 @@ const films = [
 ];
 
 const springTransition = {
-    type: "spring",
+    type: "spring" as const,
     stiffness: 40,
     damping: 20,
 };
@@ -34,6 +35,10 @@ const cardVariants: Variants = {
 };
 
 export default function PortfolioGrid() {
+    const { isLaunched } = useCountdown();
+
+    if (!isLaunched) return null;
+
     return (
         <section className={styles.gridSection}>
             <motion.h2
