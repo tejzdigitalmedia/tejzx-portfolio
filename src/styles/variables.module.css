@@ -1,0 +1,22 @@
+/* 
+  Utility module for strictly typed usage of brand colors 
+  or for composing into other modules.
+*/
+
+.textAmethyst {
+    color: var(--accent-amethyst);
+}
+
+.textAmber {
+    color: var(--accent-amber);
+}
+
+.bgObsidian {
+    background-color: var(--bg-obsidian);
+}
+
+.glassCard {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(var(--glass-blur));
+}
